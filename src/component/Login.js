@@ -1,5 +1,8 @@
 import React,{ Component } from 'react'
 
+/*
+    Import Material Design modules
+*/
 import {
     Grid,
     Card,
@@ -10,8 +13,30 @@ import {
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
+
+/*
+    Import React Router
+*/
+import { 
+    BrowserRouter as Router,
+    Link,
+    Route
+} from 'react-router-dom';
+
+/*
+    Import logo 
+*/
 import logo from '../logo.svg'
 
+/*
+ Import components
+*/
+import Register from './Register'
+import ForgotPassword from './ForgotPassword'
+
+/*
+    Import styles for material-ui
+*/
 const styles = {
     formControl:{
         margin: "15px 0px"
@@ -19,6 +44,10 @@ const styles = {
     img: {
         width: "100%",
         margin: "20px 0px"
+    },
+    title: {
+        fontSize: "36px",
+        fontWeight: "bold"
     }
 }
 
@@ -39,7 +68,7 @@ class Login extends Component{
                             <CardContent>
                                 <Grid container justify="center">
                                     <Grid item>
-                                        <Typography variant="h3">
+                                        <Typography variant="h3" className={classes.title}>
                                             Iniciar sesión
                                         </Typography>
                                     </Grid>
@@ -81,18 +110,25 @@ class Login extends Component{
                                 </form>
                                 <Grid container justify="center">
                                     <Grid item>
+                                    <Router>
                                         <Typography component="p">
-                                            ¿Olvidaste tu contraseña?
+                                            <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
+                                            <Route path="/forgot-password" exact component={ForgotPassword} />
                                         </Typography>
+                                    </Router>
                                     </Grid>
                                 </Grid>
                             </CardContent>
                         </Card>
                         <Grid container justify="center">
                             <Grid item>
-                                <Typography component="p">
-                                    ¿No tienes una cuenta?. Regístrate
-                                </Typography>
+                                <Router>
+                                    <Typography component="p">
+                                        ¿No tienes una cuenta?
+                                        <Link to="/register"> Registrate</Link>
+                                        <Route path="/register" exact component={Register} />
+                                    </Typography>
+                                </Router>
                             </Grid>
                         </Grid>
                     </Grid>
