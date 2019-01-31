@@ -110,25 +110,19 @@ class Login extends Component{
                                 </form>
                                 <Grid container justify="center">
                                     <Grid item>
-                                    <Router>
                                         <Typography component="p">
                                             <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
-                                            <Route path="/forgot-password" exact component={ForgotPassword} />
                                         </Typography>
-                                    </Router>
                                     </Grid>
                                 </Grid>
                             </CardContent>
                         </Card>
                         <Grid container justify="center">
                             <Grid item>
-                                <Router>
-                                    <Typography component="p">
-                                        ¿No tienes una cuenta?
-                                        <Link to="/register"> Registrate</Link>
-                                        <Route path="/register" exact component={Register} />
-                                    </Typography>
-                                </Router>
+                                <Typography component="p">
+                                    ¿No tienes una cuenta?
+                                    <Link to="/register"> Registrate</Link>
+                                </Typography>
                             </Grid>
                         </Grid>
                     </Grid>
