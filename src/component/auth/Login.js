@@ -18,26 +18,22 @@ import { withStyles } from '@material-ui/core/styles';
     Import React Router
 */
 import { 
-    BrowserRouter as Router,
-    Link,
-    Route
+    Link
 } from 'react-router-dom';
 
 /*
     Import logo 
 */
-import logo from '../logo.svg'
-
-/*
- Import components
-*/
-import Register from './Register'
-import ForgotPassword from './ForgotPassword'
+import logo from '../../logo.svg'
 
 /*
     Import styles for material-ui
 */
 const styles = {
+    root: {
+        height: "100vh",
+        backgroundColor: "#F5F5F5"
+    },
     formControl:{
         margin: "15px 0px"
     },
@@ -46,8 +42,24 @@ const styles = {
         margin: "20px 0px"
     },
     title: {
+        color: "#47525E",
         fontSize: "36px",
         fontWeight: "bold"
+    },
+    card: {
+        marginTop:"100px"
+    },
+    textUp: {
+        color:"#000000"
+    },
+    cardDown: {
+        marginTop: "15px",
+        padding: "15px 0px"
+    },
+    textDown: {
+        fontWeight: "bold",
+        textDecoration: "none",
+        color: "#2C87F0"
     }
 }
 
@@ -61,10 +73,10 @@ class Login extends Component{
 
         const { classes } = this.props
         return(
-            <div>
+            <div className={classes.root}>
                 <Grid container justify="center">
                     <Grid item xs={4} >
-                        <Card>
+                        <Card className={classes.card}>
                             <CardContent>
                                 <Grid container justify="center">
                                     <Grid item>
@@ -83,16 +95,18 @@ class Login extends Component{
                                         <Grid item xs={8}>
                                             <TextField
                                                 fullWidth
-                                                label='Email'
+                                                label="Email"
                                                 variant="outlined"
+                                                type="email"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
                                         <Grid item xs={8}>
                                             <TextField
                                                 fullWidth
-                                                label='Contraseña'
+                                                label="Contraseña"
                                                 variant="outlined"
+                                                type="password"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -111,20 +125,22 @@ class Login extends Component{
                                 <Grid container justify="center">
                                     <Grid item>
                                         <Typography component="p">
-                                            <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
+                                            <Link className={classes.textUp} to="/forgot-password">¿Olvidaste tu contraseña?</Link>
                                         </Typography>
                                     </Grid>
                                 </Grid>
                             </CardContent>
                         </Card>
-                        <Grid container justify="center">
-                            <Grid item>
-                                <Typography component="p">
-                                    ¿No tienes una cuenta?
-                                    <Link to="/register"> Registrate</Link>
-                                </Typography>
+                        <Card className={classes.cardDown}>
+
+                            <Grid container justify="center">
+                                <Grid item>
+                                    <Typography component="p" className={classes.textDown}>
+                                        <Link className={classes.textDown} to="/register">Crear una cuenta</Link>
+                                    </Typography>
+                                </Grid>
                             </Grid>
-                        </Grid>
+                        </Card>
                     </Grid>
                 </Grid>
             </div>

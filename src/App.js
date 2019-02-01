@@ -12,9 +12,9 @@ import {
 /*
   Import components
 */
-import Login from './component/Login'
-import ForgotPassword from './component/ForgotPassword';
-import Register from './component/Register';
+import Login from './component/auth/Login'
+import ForgotPassword from './component/auth/ForgotPassword';
+import Register from './component/auth/Register';
 
 class App extends Component {
   render() {
@@ -24,7 +24,6 @@ class App extends Component {
            <Route exact path="/" component={Login}/>
            <Route exact path="/register" component={Register}/>
            <Route exact path="/forgot-password" component={ForgotPassword} />
-           {/* <Route component={NotFound}/> */}
         </Switch>
       </Router>
     );

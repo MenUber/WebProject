@@ -14,15 +14,36 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 
 /*
+    Import logo 
+*/
+import logo from '../../logo.svg'
+
+/*
     Import styles for material-ui
 */
 const styles = {
+    root: {
+        height: "100vh",
+        backgroundColor: "#F5F5F5"
+    },
+    titlePag: {
+        color: "#47525E",
+        fontSize: "50px"
+    },
     formControl:{
         margin: "15px 0px"
     },
     title: {
+        color: "#47525E",
         fontSize: "36px",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginBottom: "15px"
+    },
+    imgLogo: {
+        width: "80%"
+    },
+    card: {
+        marginTop:"100px"
     }
 }
 
@@ -36,10 +57,20 @@ class ForgotPassword extends Component {
         const { classes } = this.props
 
         return(
-            <div>
+            <div className={classes.root}>
+                <Grid container justify="center">
+                    <Grid item xs={1}>
+                        <img src={logo} alt="Imagen" className={classes.imgLogo}/>                  
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Typography component="p" className={classes.titlePag}>
+                            Menuber
+                        </Typography>
+                    </Grid>
+                </Grid>
                 <Grid container justify="center">
                     <Grid item xs={4} >
-                        <Card>
+                        <Card className={classes.card}>
                             <CardContent>
                                 <Grid container justify="center">
                                     <Grid item>
