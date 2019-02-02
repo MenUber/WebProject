@@ -33,6 +33,11 @@ const styles = {
     formControl:{
         margin: "15px 0px"
     },
+    gridTitle: {
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "30px"
+    },
     title: {
         color: "#47525E",
         fontSize: "36px",
@@ -40,10 +45,12 @@ const styles = {
         marginBottom: "15px"
     },
     imgLogo: {
-        width: "80%"
+        width: "70px",
+        height: "70px",
+        marginRight: "15px"
     },
     card: {
-        marginTop:"100px"
+        marginTop:"30px"
     }
 }
 
@@ -59,17 +66,17 @@ class ForgotPassword extends Component {
         return(
             <div className={classes.root}>
                 <Grid container justify="center">
-                    <Grid item xs={1}>
+                    <Grid item xs={4} className={classes.gridTitle}>
                         <img src={logo} alt="Imagen" className={classes.imgLogo}/>                  
-                    </Grid>
-                    <Grid item xs={4}>
+                    {/* </Grid>
+                    <Grid item xs={4}> */}
                         <Typography component="p" className={classes.titlePag}>
                             Menuber
                         </Typography>
                     </Grid>
                 </Grid>
                 <Grid container justify="center">
-                    <Grid item xs={4} >
+                    <Grid item xs={12} sm={10} md={6} lg={6} xl={4}>
                         <Card className={classes.card}>
                             <CardContent>
                                 <Grid container justify="center">
@@ -81,7 +88,7 @@ class ForgotPassword extends Component {
                                 </Grid>
                                 <form>
                                     <Grid container justify="center">
-                                        <Grid item xs={8}>
+                                        <Grid item xs={12} sm={10} md={8}>
                                             <TextField
                                                 fullWidth
                                                 label='Email'
@@ -89,7 +96,7 @@ class ForgotPassword extends Component {
                                                 className={classes.formControl}
                                             />
                                         </Grid>
-                                        <Grid item xs={8}>
+                                        <Grid item xs={12} sm={10} md={8}>
                                             <Button
                                                 variant="contained"
                                                 color="secondary"

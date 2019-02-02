@@ -47,7 +47,10 @@ const styles = {
         fontWeight: "bold"
     },
     card: {
-        marginTop:"100px"
+        marginTop:"20px",
+        ["@media (min-width:600px)"]: {
+            marginTop:"100px",
+        }
     },
     textUp: {
         color:"#000000"
@@ -59,7 +62,7 @@ const styles = {
     textDown: {
         fontWeight: "bold",
         textDecoration: "none",
-        color: "#2C87F0"
+        color: "#2C127F0"
     }
 }
 
@@ -75,7 +78,7 @@ class Login extends Component{
         return(
             <div className={classes.root}>
                 <Grid container justify="center">
-                    <Grid item xs={4} >
+                    <Grid item xs={12} sm={10} md={6} lg={6} xl={4} >
                         <Card className={classes.card}>
                             <CardContent>
                                 <Grid container justify="center">
@@ -92,7 +95,7 @@ class Login extends Component{
                                 </Grid>
                                 <form>
                                     <Grid container justify="center">
-                                        <Grid item xs={8}>
+                                        <Grid item xs={12} sm={10} md={8}>
                                             <TextField
                                                 fullWidth
                                                 label="Email"
@@ -101,7 +104,7 @@ class Login extends Component{
                                                 className={classes.formControl}
                                             />
                                         </Grid>
-                                        <Grid item xs={8}>
+                                        <Grid item xs={12} sm={10} md={8}>
                                             <TextField
                                                 fullWidth
                                                 label="Contraseña"
@@ -110,7 +113,7 @@ class Login extends Component{
                                                 className={classes.formControl}
                                             />
                                         </Grid>
-                                        <Grid item xs={8}>
+                                        <Grid item xs={12} sm={10} md={8}>
                                             <Button
                                                 variant="contained"
                                                 color="secondary"
