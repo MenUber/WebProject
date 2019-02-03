@@ -103,7 +103,7 @@ class ForgotPassword extends Component {
                                                 fullWidth
                                                 className={classes.formControl}
                                             >
-                                                Iniciar Sesión
+                                                Enviar correo
                                             </Button>
                                         </Grid>
                                     </Grid>

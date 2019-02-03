@@ -101,6 +101,7 @@ class Login extends Component{
                                                 label="Email"
                                                 variant="outlined"
                                                 type="email"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -110,6 +111,7 @@ class Login extends Component{
                                                 label="Contraseña"
                                                 variant="outlined"
                                                 type="password"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -117,6 +119,7 @@ class Login extends Component{
                                             <Button
                                                 variant="contained"
                                                 color="secondary"
+                                                size="large"
                                                 fullWidth
                                                 className={classes.formControl}
                                             >
@@ -135,7 +138,6 @@ class Login extends Component{
                             </CardContent>
                         </Card>
                         <Card className={classes.cardDown}>
-
                             <Grid container justify="center">
                                 <Grid item>
                                     <Typography component="p" className={classes.textDown}>
@@ -151,5 +153,4 @@ class Login extends Component{
     }
 }
 
-// export default Login
-export default withStyles(styles)(Login)
+export default withStyles( styles )( Login )

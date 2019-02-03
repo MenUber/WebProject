@@ -14,6 +14,13 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 
 /*
+    Import React Router
+*/
+import { 
+    Link
+} from 'react-router-dom';
+
+/*
     Import logo 
 */
 import logo from '../../logo.svg'
@@ -31,7 +38,7 @@ const styles = {
         fontSize: "50px"
     },
     formControl:{
-        margin: "15px 0px"
+        margin: "10px 0px"
     },
     gridTitle: {
         display: "flex",
@@ -55,6 +62,10 @@ const styles = {
     },
     card: {
         marginTop:"30px"
+    },
+    cardDown: {
+        marginTop: "15px",
+        padding: "15px 0px"
     }
 }
 
@@ -97,6 +108,7 @@ class Register extends Component {
                                                 fullWidth
                                                 label='Nombres'
                                                 variant="outlined"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -105,6 +117,7 @@ class Register extends Component {
                                                 fullWidth
                                                 label='Apellidos'
                                                 variant="outlined"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -113,6 +126,7 @@ class Register extends Component {
                                                 fullWidth
                                                 label='Celular'
                                                 variant="outlined"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -121,6 +135,7 @@ class Register extends Component {
                                                 fullWidth
                                                 label='DNI'
                                                 variant="outlined"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -130,6 +145,7 @@ class Register extends Component {
                                                 label='Email'
                                                 variant="outlined"
                                                 type="email"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -139,6 +155,17 @@ class Register extends Component {
                                                 label='Contraseña'
                                                 variant="outlined"
                                                 type="password"
+                                                margin="dense"
+                                                className={classes.formControl}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12} sm={10} md={8}>
+                                            <TextField
+                                                fullWidth
+                                                label='Repetir contraseña'
+                                                variant="outlined"
+                                                type="password"
+                                                margin="dense"
                                                 className={classes.formControl}
                                             />
                                         </Grid>
@@ -146,6 +173,7 @@ class Register extends Component {
                                             <Button
                                                 variant="contained"
                                                 color="secondary"
+                                                size="large"
                                                 fullWidth
                                                 className={classes.formControl}
                                             >
@@ -156,6 +184,16 @@ class Register extends Component {
                                 </form>
                             </CardContent>
                         </Card>
+                        <Card className={classes.cardDown}>
+                            <Grid container justify="center">
+                                <Grid item>
+                                    <Typography component="p" className={classes.textDown}>
+                                        ¿Tienes una cuenta?
+                                        <Link className={classes.textDown} to="/">Inicia sesión</Link>
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Card>
                     </Grid>
                 </Grid>
             </div>
@@ -163,4 +201,4 @@ class Register extends Component {
     }
 }
 
-export default withStyles(styles)( Register )
+export default withStyles( styles )( Register )
